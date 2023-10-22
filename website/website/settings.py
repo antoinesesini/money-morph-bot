@@ -29,6 +29,19 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',  # Niveau de journalisation souhaité (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    },
+}
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -37,6 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "MoneyMorphBot.apps.MoneymorphbotConfig",
 ]
 
 MIDDLEWARE = [
